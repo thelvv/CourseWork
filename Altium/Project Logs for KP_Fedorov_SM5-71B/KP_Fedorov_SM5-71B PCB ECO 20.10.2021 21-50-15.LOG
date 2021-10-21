@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=NetC2_2 Pin=DA1-1
+Removed Pin From Net: NetName=NetC2_1 Pin=DA1-2
+Removed Pin From Net: NetName=GND Pin=DA1-3
+Removed Pin From Net: NetName=-5V Pin=DA1-4
+Removed Pin From Net: NetName=+5V Pin=DA1-8
+Removed Member From Class: ClassName=KP_Fedorov_SM5-71B Member=DA4
+Change Component Designator: OldDesignator=DA4 NewDesignator=DA1
+Added Pin To Net: NetName=NetC2_2 Pin=DA1-1
+Added Pin To Net: NetName=NetC2_1 Pin=DA1-2
+Added Pin To Net: NetName=GND Pin=DA1-3
+Added Pin To Net: NetName=-5V Pin=DA1-4
+Added Pin To Net: NetName=+5V Pin=DA1-8
+Added Room: Name=KP_Fedorov_SM5-71B
