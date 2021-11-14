@@ -1,0 +1,82 @@
+<?xml version = "1.0" ?>
+<?xml-stylesheet type="text/xsl" href="KP_Fedorov_SM5-71B.xsl"?>
+<!DOCTYPE GRID [
+  <!ELEMENT GRID (BANDS, COLUMNS, ROWS*)>
+  <!ATTLIST GRID ExportVersion CDATA #REQUIRED>
+  <!ELEMENT BANDS (BAND*)>
+  <!ELEMENT BAND EMPTY>
+  <!ATTLIST BAND Index CDATA #REQUIRED>
+  <!ATTLIST BAND Caption CDATA #IMPLIED>
+  <!ELEMENT COLUMNS (COLUMN*)>
+  <!ELEMENT COLUMN EMPTY>
+  <!ATTLIST COLUMN Name CDATA #REQUIRED>
+  <!ATTLIST COLUMN Caption CDATA #IMPLIED>
+  <!ATTLIST COLUMN Index CDATA #REQUIRED>
+  <!ATTLIST COLUMN BandIndex CDATA #REQUIRED>
+  <!ATTLIST COLUMN RowIndex CDATA #REQUIRED>
+  <!ATTLIST COLUMN ColIndex CDATA #REQUIRED>
+  <!ATTLIST COLUMN Width CDATA #IMPLIED>
+  <!ELEMENT GROUP (GROUP*, ROW*)>
+  <!ATTLIST GROUP GroupText CDATA #IMPLIED>
+  <!ELEMENT ROWS (ROW*)>
+  <!ELEMENT ROW EMPTY>
+  <!ATTLIST ROW Comment CDATA #IMPLIED>
+  <!ATTLIST ROW Description CDATA #IMPLIED>
+  <!ATTLIST ROW Designator CDATA #IMPLIED>
+  <!ATTLIST ROW Footprint CDATA #IMPLIED>
+  <!ATTLIST ROW LibRef CDATA #IMPLIED>
+  <!ATTLIST ROW Quantity CDATA #IMPLIED>
+]>
+<GRID ExportVersion="1.0">
+  <BANDS>
+    <BAND Index="0" Caption=""></BAND>
+  </BANDS>
+  <COLUMNS>
+    <COLUMN Name="Comment" Caption="Comment" Index="9" BandIndex="0" RowIndex="0" ColIndex="0" Width="100"></COLUMN>
+    <COLUMN Name="Description" Caption="Description" Index="23" BandIndex="0" RowIndex="0" ColIndex="1" Width="100"></COLUMN>
+    <COLUMN Name="Designator" Caption="Designator" Index="24" BandIndex="0" RowIndex="0" ColIndex="2" Width="100"></COLUMN>
+    <COLUMN Name="Footprint" Caption="Footprint" Index="42" BandIndex="0" RowIndex="0" ColIndex="3" Width="100"></COLUMN>
+    <COLUMN Name="LibRef" Caption="LibRef" Index="54" BandIndex="0" RowIndex="0" ColIndex="4" Width="100"></COLUMN>
+    <COLUMN Name="Quantity" Caption="Quantity" Index="74" BandIndex="0" RowIndex="0" ColIndex="5" Width="100"></COLUMN>
+  </COLUMNS>
+  <ROWS>
+    <ROW Comment="24n" Description="" Designator="C1" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="1"></ROW>
+    <ROW Comment="10n" Description="" Designator="C2, C4" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="2"></ROW>
+    <ROW Comment="150n" Description="" Designator="C3" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="1"></ROW>
+    <ROW Comment="10 pF" Description="" Designator="C5, C6" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="2"></ROW>
+    <ROW Comment="1 uF" Description="" Designator="C7, C18, C30, C31" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="4"></ROW>
+    <ROW Comment="100 uF" Description="" Designator="C8, C23, C25, C26" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="4"></ROW>
+    <ROW Comment="100 nF" Description="" Designator="C9, C17, C19" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="3"></ROW>
+    <ROW Comment="0.1uF" Description="" Designator="C10, C11, C13, C14" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="4"></ROW>
+    <ROW Comment="2.2 nF" Description="" Designator="C12, C15" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="2"></ROW>
+    <ROW Comment="4.7uF" Description="" Designator="C16" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="1"></ROW>
+    <ROW Comment="4.7 uF" Description="" Designator="C20, C21" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="2"></ROW>
+    <ROW Comment="0.1 uF" Description="" Designator="C22, C24, C28, C29" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="4"></ROW>
+    <ROW Comment="330 uF" Description="" Designator="C27" Footprint="0805 Capicator" LibRef="Capacitor" Quantity="1"></ROW>
+    <ROW Comment="MBR0520LT1G" Description="" Designator="D1, D2" Footprint="sod-123" LibRef="Diode Schottky" Quantity="2"></ROW>
+    <ROW Comment="AD8502" Description="AD8502" Designator="DA1, DA2" Footprint="SOT-23-8" LibRef="OpAmp" Quantity="2"></ROW>
+    <ROW Comment="LDO" Description="ADR445BRZ" Designator="DA3" Footprint="SOIC-8" LibRef="LDO" Quantity="1"></ROW>
+    <ROW Comment="LDO2.5V" Description="ADM7160AUJZ" Designator="DA5" Footprint="SOT-23-5" LibRef="LDO2.5V" Quantity="1"></ROW>
+    <ROW Comment="LDO3.3V" Description="TPS78233DDCR" Designator="DA6" Footprint="SOT-23-5" LibRef="LDO3.3V" Quantity="1"></ROW>
+    <ROW Comment="DC/DC inv" Description="TPS60403DBVR" Designator="DD1" Footprint="SOT-23-5" LibRef="DC/DC inv" Quantity="1"></ROW>
+    <ROW Comment="24bit 128k" Description="AD7767" Designator="DD3" Footprint="TSSOP-16" LibRef="ADC" Quantity="1"></ROW>
+    <ROW Comment="STM32F303RCT7" Description="ARM Cortex-M4 32-bit MCU, 256 KB Flash, 40 KB Internal RAM, 52 I/Os, 64-pin LQFP, -40 to 105 degC, Tray, 39x12bit ADC" Designator="DD5" Footprint="LQFP64" LibRef="STM32F303RCT7" Quantity="1"></ROW>
+    <ROW Comment="DC/DC" Description="LM2575S-5.0/NOPB" Designator="DD6" Footprint="TO-263-5L" LibRef="DC/DC" Quantity="1"></ROW>
+    <ROW Comment="10 uH" Description="" Designator="L1" Footprint="0805 Inductor" LibRef="Inductor" Quantity="1"></ROW>
+    <ROW Comment="330 uH" Description="" Designator="L2" Footprint="0805 Inductor" LibRef="Inductor" Quantity="1"></ROW>
+    <ROW Comment="6.8k" Description="" Designator="R1, R5" Footprint="0805 Resistor" LibRef="Resistor" Quantity="2"></ROW>
+    <ROW Comment="2.2k" Description="" Designator="R2, R3" Footprint="0805 Resistor" LibRef="Resistor" Quantity="2"></ROW>
+    <ROW Comment="3.9k" Description="" Designator="R4" Footprint="0805 Resistor" LibRef="Resistor" Quantity="1"></ROW>
+    <ROW Comment="1.8k" Description="" Designator="R6" Footprint="0805 Resistor" LibRef="Resistor" Quantity="1"></ROW>
+    <ROW Comment="3k9" Description="" Designator="R7" Footprint="0805 Resistor" LibRef="Resistor" Quantity="1"></ROW>
+    <ROW Comment="10k" Description="" Designator="R8, R9, R10" Footprint="0805 Resistor" LibRef="Resistor" Quantity="3"></ROW>
+    <ROW Comment="20k" Description="" Designator="R11" Footprint="0805 Resistor" LibRef="Resistor" Quantity="1"></ROW>
+    <ROW Comment="15k" Description="" Designator="R12, R15" Footprint="0805 Resistor" LibRef="Resistor" Quantity="2"></ROW>
+    <ROW Comment="1k" Description="" Designator="R13, R14, R17" Footprint="0805 Resistor" LibRef="Resistor" Quantity="3"></ROW>
+    <ROW Comment="2k" Description="" Designator="R16" Footprint="0805 Resistor" LibRef="Resistor" Quantity="1"></ROW>
+    <ROW Comment="PBS2" Description="PBS2" Designator="XP1, XP2" Footprint="PBS 2x1" LibRef="Conn2x1" Quantity="2"></ROW>
+    <ROW Comment="PLS-5" Description="PLS-5" Designator="XP3" Footprint="PBS 5x1" LibRef="Conn5x1" Quantity="1"></ROW>
+    <ROW Comment="SCNM9FM2MBK" Description="DB-9M" Designator="XP4" Footprint="DB9" LibRef="Conn9x1" Quantity="1"></ROW>
+    <ROW Comment="8MHz" Description="Crystal. HC-49S &#40;US&#41;" Designator="Y1" Footprint="R38" LibRef="Crystal 8MHz" Quantity="1"></ROW>
+  </ROWS>
+</GRID>
