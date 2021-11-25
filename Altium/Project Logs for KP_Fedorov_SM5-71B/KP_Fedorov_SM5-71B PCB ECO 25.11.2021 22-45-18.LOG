@@ -1,0 +1,29 @@
+Added Pin To Net: NetName=NetC3_2 Pin=DA1-1
+Added Pin To Net: NetName=NetC3_1 Pin=DA1-2
+Added Pin To Net: NetName=GND Pin=DA1-3
+Added Pin To Net: NetName=GND Pin=DA1-5
+Added Pin To Net: NetName=NetC2_1 Pin=DA1-6
+Added Pin To Net: NetName=NetC2_2 Pin=DA1-7
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C2 10nF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C3 10n
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C5 100 uF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C10 0.1 nF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C20 2.2 nF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C21 2.2 nF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C22 1 uF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C25 1 uF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C26 4.7 uF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C27 4.7 uF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C28 4.7uF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component C31 10 pF
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R2 6.8k
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R4 3.9k
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R5 2.2k
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R6 2.2k
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R7 1.8k
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R9 10k
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R11 20k
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R14 1k
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R15 1k
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component R17 2k
+Added Room: Name=KP_Fedorov_SM5-71B

@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=NetC3_2 Pin=DA1-1
+Added Pin To Net: NetName=NetC3_1 Pin=DA1-2
+Added Pin To Net: NetName=GND Pin=DA1-3
+Added Pin To Net: NetName=GND Pin=DA1-5
+Added Pin To Net: NetName=NetC2_1 Pin=DA1-6
+Added Pin To Net: NetName=NetC2_2 Pin=DA1-7
