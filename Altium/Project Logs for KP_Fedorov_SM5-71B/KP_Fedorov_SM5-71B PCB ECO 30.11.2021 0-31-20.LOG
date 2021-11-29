@@ -1,0 +1,19 @@
+Added Component: Designator=DD2(TSSOP-16)
+Added Pin To Net: NetName=NetC22_2 Pin=DD2-1
+Added Pin To Net: NetName=NetC22_2 Pin=DD2-1
+Added Pin To Net: NetName=Vref Pin=DD2-2
+Added Pin To Net: NetName=GND Pin=DD2-3
+Added Pin To Net: NetName=NetC20_2 Pin=DD2-4
+Added Pin To Net: NetName=NetC21_1 Pin=DD2-5
+Added Pin To Net: NetName=GND Pin=DD2-6
+Added Pin To Net: NetName=NetDD1_41 Pin=DD2-7
+Added Pin To Net: NetName=+2.5V Pin=DD2-8
+Added Pin To Net: NetName=+3.3V Pin=DD2-9
+Added Pin To Net: NetName=NetDD1_22 Pin=DD2-10
+Added Pin To Net: NetName=GND Pin=DD2-11
+Added Pin To Net: NetName=NetDD1_17 Pin=DD2-12
+Added Pin To Net: NetName=NetDD1_21 Pin=DD2-13
+Added Pin To Net: NetName=NetDD1_23 Pin=DD2-15
+Added Pin To Net: NetName=NetDD1_20 Pin=DD2-16
+Added Member To Class: ClassName=KP_Fedorov_SM5-71B Member=Component DD2 24bit 128k
+Added Room: Name=KP_Fedorov_SM5-71B
