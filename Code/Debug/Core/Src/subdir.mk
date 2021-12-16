@@ -13,18 +13,6 @@ C_SRCS += \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f3xx.c 
 
-<<<<<<< HEAD
-=======
-C_DEPS += \
-./Core/Src/fft_test.d \
-./Core/Src/main.d \
-./Core/Src/stm32f3xx_hal_msp.d \
-./Core/Src/stm32f3xx_it.d \
-./Core/Src/syscalls.d \
-./Core/Src/sysmem.d \
-./Core/Src/system_stm32f3xx.d 
-
->>>>>>> 0ddf0c4fffd593014163a83449ef58e194155698
 OBJS += \
 ./Core/Src/fft_test.o \
 ./Core/Src/main.o \
@@ -35,6 +23,7 @@ OBJS += \
 ./Core/Src/system_stm32f3xx.o 
 
 C_DEPS += \
+./Core/Src/fft_test.d \
 ./Core/Src/main.d \
 ./Core/Src/stm32f3xx_hal_msp.d \
 ./Core/Src/stm32f3xx_it.d \

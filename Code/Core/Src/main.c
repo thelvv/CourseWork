@@ -68,6 +68,7 @@ static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN 0 */
 float ADC_Data[32];
 int amountOfPoints = 0;
+float out_data[32 / 2];
 /* USER CODE END 0 */
 
 /**
@@ -114,7 +115,16 @@ int main(void)
 	{
 		HAL_NVIC_DisableIRQ(EXTI3_IRQn);
 
-		fft(ADC_Data, ADC_Data, 32);
+		fft(ADC_Data, ADC_Data, amountOfPoints* 2);
+
+
+
+		for(int i = 1 ; i < amountOfPoints / 2; ++i){
+				out_data[i]=ADC_Data[i+1];
+		}
+
+	//	ifft();
+
 		amountOfPoints = 0;
 
 		HAL_NVIC_EnableIRQ(EXTI3_IRQn);
