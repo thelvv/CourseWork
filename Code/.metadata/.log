@@ -1,0 +1,31 @@
+!SESSION 2021-12-02 00:43:17.277 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-12-02 00:43:37.477
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-12-02 00:43:37.526
+!MESSAGE Log4j initialized with config file C:\Altium\Projects\CourseWork\Code\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-12-02 00:43:44.212
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2021-12-02 00:44:37.410 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Framework arguments:  C:\Altium\Projects\CourseWork\Code\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Altium\Projects\CourseWork\Code\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-12-02 00:44:43.457
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-12-02 00:44:43.501
+!MESSAGE Log4j initialized with config file C:\Altium\Projects\CourseWork\Code\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-12-02 00:44:50.740
+!MESSAGE Started RMI Server, listening on port 41337
