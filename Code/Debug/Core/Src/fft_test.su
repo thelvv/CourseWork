@@ -1,0 +1,3 @@
+fft_test.c:1:6:fft	24	static
+fft_test.c:7:6:rearrange	48	static
+fft_test.c:30:6:compute	72	static

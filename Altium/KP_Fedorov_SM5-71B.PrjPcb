@@ -32,8 +32,12 @@ FSMEncodingStyle=eFMSDropDownList_OneHot
 OutputPath=
 =======
 IsProjectConflictPreventionWarningsEnabled=1
+<<<<<<< HEAD
 OutputPath=Project Outputs for KP_Fedorov_SM5-71B
 >>>>>>> 4e0a179f6e2354c71442f86ec50b9a941648ba14
+=======
+OutputPath=
+>>>>>>> 0ddf0c4fffd593014163a83449ef58e194155698
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -234,7 +238,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=Project Outputs for KP_Fedorov_SM5-71B
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
