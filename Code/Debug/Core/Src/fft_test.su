@@ -1,3 +1,5 @@
 fft_test.c:1:6:fft	24	static
 fft_test.c:7:6:rearrange	48	static
 fft_test.c:30:6:compute	72	static
+fft_test.c:69:6:remove_frec	32	static
+fft_test.c:80:6:ifft	80	static

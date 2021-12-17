@@ -66,7 +66,10 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float ADC_Data[32];
+float ADC_Data[256];
+float ADC_Data_im[256];
+float out_ADC_data_re[200];
+float out_ADC_data_im[200];
 int amountOfPoints = 0;
 /* USER CODE END 0 */
 
@@ -110,13 +113,16 @@ int main(void)
   uint8_t UART_Data = 0;
   while (1)
   {
-	if(amountOfPoints == 31)
+	if(amountOfPoints == 255)
 	{
 		HAL_NVIC_DisableIRQ(EXTI3_IRQn);
 
-		fft(ADC_Data, ADC_Data, 32);
+		fft(ADC_Data, ADC_Data_im, 256);
 		amountOfPoints = 0;
 
+		remove_frec(ADC_Data,ADC_Data_im,out_ADC_data_re,out_ADC_data_im,200);
+
+		ifft(ADC_Data,ADC_Data,200);
 		HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 	}
 

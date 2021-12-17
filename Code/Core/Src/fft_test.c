@@ -64,3 +64,84 @@ void compute(float data_re[], float data_im[], const unsigned int N)
     }
   }
 }
+
+
+void remove_frec(float data_re[],float data_im[],float data_res_re[],float data_res_im[], int N){
+
+	for(int i = 0 ; i < N; ++i){
+		data_res_re[i] = data_re[i];
+		data_res_im[i] = data_im[i];
+	}
+
+}
+
+
+
+void ifft(float data_real[], float data_imag[], int N)
+{
+    float temp1_real;
+	float temp1_imag;
+    float temp2_real;
+    float temp2_imag;
+    int i, j, k;
+    int upper_leg, lower_leg;
+    int leg_diff;
+    int num_stages = 0;
+    int index, step;
+
+    i = 1;
+    do
+    {
+        num_stages += 1;
+        i = i * 2;
+    } while (i != N);
+
+
+    leg_diff = N / 2;
+
+    step = 256 / N;
+
+
+    for (i = 0; i < num_stages; i++)
+    {
+        index = 0;
+        for (j = 0; j < leg_diff; j++)
+        {
+            for (upper_leg = j; upper_leg < N; upper_leg += (2 * leg_diff))
+            {
+                lower_leg = upper_leg + leg_diff;
+                temp1_real = data_real[upper_leg] + data_real[lower_leg];
+                temp1_imag = data_imag[upper_leg] + data_imag[lower_leg];
+                temp2_real = data_real[upper_leg] - data_real[lower_leg];
+                temp2_imag = data_imag[upper_leg] - data_imag[lower_leg];
+                data_real[upper_leg] = temp1_real;
+                data_imag[upper_leg] = temp1_imag;
+            }
+            index += step;
+        }
+        leg_diff = leg_diff / 2;
+        step *= 2;
+    }
+
+    j = 0;
+    for (i = 1; i < (N - 1); i++)
+    {
+        k = N / 2;
+        while (k <= j)
+        {
+            j = j - k;
+            k = k / 2;
+        }
+        j = j + k;
+        if (i < j)
+        {
+            temp1_real = data_real[j];
+            temp1_imag = data_imag[j];
+            data_real[j] = data_real[i];
+            data_imag[j] = data_imag[i];
+            data_real[i] = temp1_real;
+            data_imag[i] = temp1_imag;
+        }
+    }
+    return;
+}
