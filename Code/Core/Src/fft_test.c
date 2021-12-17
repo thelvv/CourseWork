@@ -1,3 +1,6 @@
+#include "main.h"
+#include "math.h"
+
 void fft(float data_re[], float data_im[], const unsigned int N)
 {
   rearrange(data_re, data_im, N);
