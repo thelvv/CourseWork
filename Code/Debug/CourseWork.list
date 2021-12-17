@@ -899,7 +899,10 @@ Disassembly of section .text:
  8000b62:	bf00      	nop
 
 08000b64 <get_max_amp>:
-#include "main.h"
+/* Частота дискретизации АЦП 128k отсчетов/сек, поэтому для уменьшения шага частот в полученном спектре
+ * был взят большой размер массива входных данных.
+ */
+
 
 uint8_t get_max_amp(const float data[]) {
  8000b64:	b480      	push	{r7}
