@@ -27,6 +27,7 @@
 
 #include <math.h>
 #include "fft_test.h"
+#include "core_functions.h"
 
 //#include "tm_stm32_fft.h"
 
@@ -66,7 +67,8 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float ADC_Data[32];
+float ADC_Data[256];
+float ADC_Data_im[256];
 int amountOfPoints = 0;
 /* USER CODE END 0 */
 
@@ -110,17 +112,20 @@ int main(void)
   uint8_t UART_Data = 0;
   while (1)
   {
-	if(amountOfPoints == 31)
+	if(amountOfPoints == 255)
 	{
+		amountOfPoints = 0;
 		HAL_NVIC_DisableIRQ(EXTI3_IRQn);
 
-		fft(ADC_Data, ADC_Data, 32);
-		amountOfPoints = 0;
+		fft(ADC_Data, ADC_Data_im, 512);
+		UART_Data = get_max_amp(ADC_Data);
 
 		HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+		HAL_UART_Transmit(&huart1, &UART_Data, 1, 100);
 	}
 
-	HAL_UART_Transmit(&huart1, &UART_Data, 1, 100);
+	//HAL_UART_Transmit(&huart1, &UART_Data, 1, 100);
 
     /* USER CODE END WHILE */
 
