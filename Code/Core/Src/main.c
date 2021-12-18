@@ -67,9 +67,10 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float ADC_Data[256];
-float ADC_Data_im[256];
+float ADC_Data[512];
+float ADC_Data_im[512];
 int amountOfPoints = 0;
+int Flag = 0;
 /* USER CODE END 0 */
 
 /**
@@ -110,17 +111,29 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   uint8_t UART_Data = 0;
+
   while (1)
   {
-	if(amountOfPoints == 255)
+	if (Flag == 1) {
+		uint8_t ADC[3];
+		HAL_SPI_Receive(&hspi1, ADC, 3, 100);
+
+	    if(amountOfPoints < 512)
+		{
+		    ADC_Data[amountOfPoints] = (ADC[0] | (ADC[1]<<8) | (ADC[2]<<16))*2.5/0xFFFFFF;
+		    amountOfPoints++;
+		}
+
+	    Flag = 0;
+	}
+
+	if(amountOfPoints == 511)
 	{
 		amountOfPoints = 0;
 		HAL_NVIC_DisableIRQ(EXTI3_IRQn);
 
 		fft(ADC_Data, ADC_Data_im, 512);
 		UART_Data = get_max_amp(ADC_Data);
-
-		HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 
 		HAL_UART_Transmit(&huart1, &UART_Data, 1, 100);
 	}

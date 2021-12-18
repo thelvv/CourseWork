@@ -42,8 +42,9 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 extern SPI_HandleTypeDef hspi1;
-extern float ADC_Data[32];
+extern float ADC_Data[512];
 extern int amountOfPoints;
+extern int Flag;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -206,13 +207,9 @@ void SysTick_Handler(void)
 void EXTI3_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI3_IRQn 0 */
-  uint8_t ADC[3];
-  HAL_SPI_Receive(&hspi1, ADC, 3, 100);
-  if(amountOfPoints < 256)
-  {
-	  ADC_Data[amountOfPoints] = (ADC[0] | (ADC[1]<<8) | (ADC[2]<<16))*2.5/0xFFFFFF;
-	  amountOfPoints++;
-  }
+
+  Flag = 1;
+
   /* USER CODE END EXTI3_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(DRDY_Pin);
   /* USER CODE BEGIN EXTI3_IRQn 1 */
