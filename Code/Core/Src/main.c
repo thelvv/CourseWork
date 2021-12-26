@@ -121,6 +121,7 @@ int main(void)
 	    if(amountOfPoints < 512)
 		{
 		    ADC_Data[amountOfPoints] = (ADC[0] | (ADC[1]<<8) | (ADC[2]<<16))*2.5/0xFFFFFF;
+		    ADC_Data_im[amountOfPoints] = 0;
 		    amountOfPoints++;
 		}
 
