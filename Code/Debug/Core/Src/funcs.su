@@ -1,0 +1,5 @@
+funcs.c:3:6:rearrange	48	static
+funcs.c:26:6:compute	72	static
+funcs.c:64:6:fft	24	static
+funcs.c:75:6:remove_frec	32	static
+funcs.c:86:6:ifft	72	static

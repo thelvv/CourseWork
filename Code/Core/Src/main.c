@@ -26,8 +26,8 @@
 /* USER CODE BEGIN Includes */
 
 #include <math.h>
-#include "fft_test.h"
-#include "core_functions.h"
+#include "funcs.c"
+
 
 //#include "tm_stm32_fft.h"
 
@@ -69,6 +69,8 @@ static void MX_USART1_UART_Init(void); // прототип функций ини
 /* USER CODE BEGIN 0 */
 float ADC_Data[512];
 float ADC_Data_im[512];
+float out_Data[256];
+float out_Data_im[256];
 int amountOfPoints = 0;
 int Flag = 0;
 /* USER CODE END 0 */
@@ -110,8 +112,6 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  uint8_t UART_Data = 0;
-
   while (1)
   {
 	if (Flag == 1) {
@@ -120,8 +120,8 @@ int main(void)
 
 	    if(amountOfPoints < 512)
 		{
-		    ADC_Data[amountOfPoints] = (ADC[0] | (ADC[1]<<8) | (ADC[2]<<16))*2.5/0xFFFFFF;
-		    ADC_Data_im[amountOfPoints] = 0;
+		    ADC_Data[amountOfPoints] = (ADC[0] | (ADC[1]<<8) | (ADC[2]<<16))*2.5/0xFFFFFF; // перевод число в десятичную с.с.
+		    ADC_Data_im[amountOfPoints] = 0;  // инициализация нулями
 		    amountOfPoints++;
 		}
 
@@ -137,9 +137,15 @@ int main(void)
 										 // обработки уже полученных данных
 
 		fft(ADC_Data, ADC_Data_im, 512);
-		UART_Data = get_max_amp(ADC_Data);
+		remove_frec(ADC_Data,ADC_Data_im,out_Data,out_Data_im,256);
+		ifft(out_Data,out_Data_im,256);
 
-		HAL_UART_Transmit(&huart1, &UART_Data, 1, 100);
+
+		for(int i = 0; i < 256; i++)
+		{
+			HAL_UART_Transmit(&huart1, (uint8_t*)&out_Data[i], 1, 100); //(uint8_t*)
+		}
+
 		HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 	}
 

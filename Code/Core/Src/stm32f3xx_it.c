@@ -45,6 +45,7 @@ extern SPI_HandleTypeDef hspi1;
 extern float ADC_Data[512];
 extern int amountOfPoints;
 extern int Flag;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
