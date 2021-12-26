@@ -1,8 +1,4 @@
-void fft(float data_re[], float data_im[], const unsigned int N)
-{
-  rearrange(data_re, data_im, N);
-  compute(data_re, data_im, N);
-}
+#include "math.h"
 
 void rearrange(float data_re[], float data_im[], const unsigned int N)
 {
@@ -63,4 +59,10 @@ void compute(float data_re[], float data_im[], const unsigned int N)
 
     }
   }
+}
+
+void fft(float data_re[], float data_im[], const unsigned int N)
+{
+  rearrange(data_re, data_im, N);
+  compute(data_re, data_im, N);
 }

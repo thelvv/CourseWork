@@ -48,28 +48,29 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-SPI_HandleTypeDef hspi1;
+SPI_HandleTypeDef hspi1; // объект структуры SPI1, хранящий его настройки
 
-UART_HandleTypeDef huart1;
+UART_HandleTypeDef huart1; // объект структуры UART, хранящий его настройки
 
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
-static void MX_SPI1_Init(void);
-static void MX_USART1_UART_Init(void);
+void SystemClock_Config(void); // прототип функций инициализации периферии тактирования
+static void MX_GPIO_Init(void); // прототип функций инициализации периферии GPIO (портов ввода-вывода)
+static void MX_SPI1_Init(void); // прототип функций инициализации SPI
+static void MX_USART1_UART_Init(void); // прототип функций инициализации USART
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float ADC_Data[256];
-float ADC_Data_im[256];
+float ADC_Data[512];
+float ADC_Data_im[512];
 int amountOfPoints = 0;
+int Flag = 0;
 /* USER CODE END 0 */
 
 /**
@@ -110,19 +111,36 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   uint8_t UART_Data = 0;
+
   while (1)
   {
-	if(amountOfPoints == 255)
+	if (Flag == 1) {
+		uint8_t ADC[3];
+		HAL_SPI_Receive(&hspi1, ADC, 3, 100);
+
+	    if(amountOfPoints < 512)
+		{
+		    ADC_Data[amountOfPoints] = (ADC[0] | (ADC[1]<<8) | (ADC[2]<<16))*2.5/0xFFFFFF;
+		    ADC_Data_im[amountOfPoints] = 0;
+		    amountOfPoints++;
+		}
+
+	    Flag = 0;
+	}
+/* В идеале необходимо использоваться DMA, чтобы параллельно принимать новые данные и обрабатывать уже
+ *  полученные, но было решено выполнять данные операции последовательно.*/
+
+	if(amountOfPoints == 511)
 	{
 		amountOfPoints = 0;
-		HAL_NVIC_DisableIRQ(EXTI3_IRQn);
+		HAL_NVIC_DisableIRQ(EXTI3_IRQn); // выключение прерываний, чтоб они не приходили во время
+										 // обработки уже полученных данных
 
 		fft(ADC_Data, ADC_Data_im, 512);
 		UART_Data = get_max_amp(ADC_Data);
 
-		HAL_NVIC_EnableIRQ(EXTI3_IRQn);
-
 		HAL_UART_Transmit(&huart1, &UART_Data, 1, 100);
+		HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 	}
 
 	//HAL_UART_Transmit(&huart1, &UART_Data, 1, 100);

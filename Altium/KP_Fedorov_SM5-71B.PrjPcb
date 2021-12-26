@@ -31,7 +31,7 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=1
-OutputPath=
+OutputPath=Project Outputs for KP_Fedorov_SM5-71B
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -175,7 +175,7 @@ ConfigurationType=
 
 [Generic_SmartPDF]
 AutoOpenFile=-1
-AutoOpenOutJob=-1
+AutoOpenOutJob=0
 
 [Generic_SmartPDFSettings]
 ProjectMode=0
@@ -186,11 +186,11 @@ AddNetNetLabels=-1
 AddNetPorts=-1
 ShowComponentParameters=-1
 GlobalBookmarks=0
-ExportBOM=-1
+ExportBOM=0
 TemplateFilename=Board Stack Report.XLT
 TemplateStoreRelative=-1
 PCB_PrintColor=1
-SCH_PrintColor=0
+SCH_PrintColor=2
 PrintQuality=-3
 SCH_ShowNoErc=-1
 SCH_ShowParameter=-1
@@ -210,7 +210,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for KP_Fedorov_SM5-71B
 
 [OutputGroup1]
 Name=Netlist Outputs

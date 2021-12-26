@@ -13,5 +13,5 @@ uint8_t get_max_amp(const float data[]) {
 	} else if ((data[2] > data[0]) & (data[2] > data[1])) {
 		return 3;
 	}
-		return 4;
+	return 4;
 }
